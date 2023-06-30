@@ -14,7 +14,7 @@ app.use(cors());
 app.use(morgan("tiny"));
 
 app.listen(process.env.APP_PORT, () => {
-   console.log(`Server running on [${process.env.APP_URL}:${process.env.APP_PORT}]. \nPress Ctrl+C to stop the server`);
+   console.log(`Server running on [http://${process.env.APP_URL}:${process.env.APP_PORT}]. \nPress Ctrl+C to stop the server`);
 });
 
 app.get("/", (req, res) => {
