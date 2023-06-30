@@ -17,7 +17,7 @@ app.listen(process.env.APP_PORT, () => {
    console.log(`Server running on [${process.env.APP_URL}:${process.env.APP_PORT}]. \nPress Ctrl+C to stop the server`);
 });
 
-app.get("/", (res) => {
+app.get("/", (req, res) => {
    res.status(200).send({ msg: "API on /api" });
 });
 
