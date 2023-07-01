@@ -18,7 +18,7 @@ app.listen(process.env.APP_PORT, () => {
 });
 
 app.get("/", (req, res) => {
-   res.status(200).send({ msg: "API on /api" });
+   res.status(200).send({ msg: "Docs on /api" });
 });
 
 app.use("/api", routes);

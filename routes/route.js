@@ -4,6 +4,11 @@ import Auth from "../middleware/auth.js";
 
 const router = Router();
 
+router.get("/", (req, res) => {
+   const apiDocumentationUrl = "https://badzlan.github.io/profile-card-api/#api-documentation";
+   res.redirect(apiDocumentationUrl);
+});
+
 // auth
 router.post("/register", apiController.register);
 router.post("/login", apiController.login);

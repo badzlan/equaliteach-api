@@ -44,7 +44,7 @@ const login = async (req, res) => {
       }
 
       const token = createToken(user._id);
-      res.status(201).send({ data: {email: user.email, username: user.username}, msg: "Berhasil Login", token });
+      res.status(201).send({ email: user.email, username: user.username, msg: "Berhasil Login", token });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }
@@ -54,12 +54,12 @@ const getDiskusi = async (req, res) => {
    const { category } = req.query;
 
    try {
-      if(category != null){
+      if (category != null) {
          const filter = await Discuss.find({ category });
-         res.status(200).send({ diskusi: filter });
+         filter.length === 0 ? res.status(404).json({ error: "Discuss not found" }) : res.status(200).send({ diskusi: filter });
       } else {
          const diskusi = await Discuss.find();
-         res.status(200).send({ diskusi });
+         diskusi.length === 0 ? res.status(200).json({ msg: "Belum ada diskusi" }) : res.status(200).send({ diskusi });
       }
    } catch (error) {
       res.status(400).json({ error: error.message });
@@ -71,6 +71,10 @@ const postDiskusi = async (req, res) => {
 
    try {
       const date = Date.now();
+      const user = await User.findOne({ username });
+      if (!user) {
+         throw Error("Incorrect Username");
+      }
       await Discuss.create({ username, date, discuss, category });
       res.status(201).send({ msg: "Berhasil menambahkan diskusi" });
    } catch (error) {
