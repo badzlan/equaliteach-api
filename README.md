@@ -58,3 +58,29 @@ Response Error :
   "error": "Incorrect Password"
 }
 ```
+
+### Post Diskusi
+Endpoint : ```POST /api/diskusi```
+
+Request Body :
+```json
+{
+  "username": "username",
+  "discuss": "discuss",
+  "category": "Menuju Kesetaraan Gender yang Inklusif"
+}
+```
+
+Response Success :
+```json
+{
+  "msg": "Berhasil menambahkan diskusi"
+}
+```
+
+Response Error :
+```json
+{
+  "error": "Incorrect Username"
+}
+```
