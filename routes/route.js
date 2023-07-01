@@ -5,7 +5,7 @@ import Auth from "../middleware/auth.js";
 const router = Router();
 
 router.get("/", (req, res) => {
-   const apiDocumentationUrl = "https://badzlan.github.io/profile-card-api/#api-documentation";
+   const apiDocumentationUrl = "https://badzlan.github.io/equaliteach-api/#api-documentation";
    res.redirect(apiDocumentationUrl);
 });
 

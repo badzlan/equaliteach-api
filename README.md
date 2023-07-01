@@ -62,6 +62,9 @@ Response Error :
 ### Post Diskusi
 Endpoint : ```POST /api/diskusi```
 
+Headers : 
+- Authorization : Bearer token
+
 Request Body :
 ```json
 {
@@ -142,4 +145,4 @@ Response Error
 {
   "error": "Discuss not found"
 }
-``
+```
