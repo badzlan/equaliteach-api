@@ -84,3 +84,31 @@ Response Error :
   "error": "Incorrect Username"
 }
 ```
+
+### Get All Diskusi
+Endpoint : ```GET /api/diskusi```
+
+Headers : 
+- Authorization : Bearer token
+
+Response Success :
+```json
+{
+  "diskusi": [
+    {
+      "_id": "649d9b9e37a5474a1307c9c8",
+      "username": "admin",
+      "date": "2023-06-29T14:56:30.408Z",
+      "discuss": "discuss",
+      "category": "Membongkar Stereotip dan Membuka Peluang Baru"
+    },
+    {
+      "_id": "649f62602dc6ed7ffb016563",
+      "username": "username",
+      "date": "2023-06-30T23:16:48.761Z",
+      "discuss": "discuss",
+      "category": "Menuju Kesetaraan Gender yang Inklusif"
+    }
+  ]
+}
+```
