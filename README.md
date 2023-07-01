@@ -112,3 +112,34 @@ Response Success :
   ]
 }
 ```
+
+### Search Diskusi
+Endpoint : ```GET /api/diskusi```
+
+Headers : 
+- Authorization : Bearer token
+
+Query Params :
+- category : Search by category of discuss, default all
+
+Response Success :
+```json
+{
+  "diskusi": [
+    {
+      "_id": "649f62602dc6ed7ffb016563",
+      "username": "username",
+      "date": "2023-06-30T23:16:48.761Z",
+      "discuss": "discuss",
+      "category": "Menuju Kesetaraan Gender yang Inklusif"
+    }
+  ]
+}
+```
+
+Response Error
+```json
+{
+  "error": "Discuss not found"
+}
+``
